@@ -4,11 +4,14 @@ import com.example.loan_service.domain.EmploymentType;
 import com.example.loan_service.domain.LoanPurpose;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
-import lombok.Data;
+import lombok.*;
 
 import java.math.BigDecimal;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class LoanApplicationRequest {
 
     @Valid
@@ -19,21 +22,7 @@ public class LoanApplicationRequest {
     @NotNull
     private Loan loan;
 
-    public Applicant getApplicant() {
-        return applicant;
-    }
 
-    public void setApplicant(Applicant applicant) {
-        this.applicant = applicant;
-    }
-
-    public Loan getLoan() {
-        return loan;
-    }
-
-    public void setLoan(Loan loan) {
-        this.loan = loan;
-    }
 
     @Data
     public static class Applicant {
